@@ -1,0 +1,142 @@
+body{
+    background: linear-gradient(121.7deg, rgb(41, 116, 250) 22.9%, rgb(67, 212, 255) 69%);
+    margin: 0;
+	padding: 0;
+	border: 0; 
+} 
+
+#nav_container{
+    width: 100%;
+    
+}
+
+#todaysDate {
+    font-size: larger;
+    padding: 20px;
+    text-align: center;
+}
+
+.tasks{
+    display: inline-flex;
+    padding: 5px;
+    margin: 8px;
+}
+
+.items{
+    margin-right: 20px;
+    font-size: 1.25rem;
+    font-family: 'Handlee', cursive;
+    display:flex;
+    flex-direction: column;
+}
+
+.done_btn{
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.del_btn{
+    border-radius: 8px;
+    background-color: darksalmon;
+}
+
+nav ul{
+    display: flex;
+    flex-wrap:wrap;
+    margin-bottom: 40px;
+    padding-left: 20px;
+    justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+    nav ul{
+      flex-direction: column-reverse;
+      margin-top: 0px;
+      align-items: center; 
+    }
+}
+nav ul li{
+    display:flex;
+    margin-right: 20px;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    padding-bottom: 5px;
+    color:black;
+}
+
+.lists{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+h2 {
+    justify-content: center;
+    text-align: center;
+}
+
+a {
+    color:black;
+}   
+
+a:link {
+    text-decoration: none;
+  }
+
+a:hover{
+    color: white;
+}
+
+.task_done{
+    text-decoration: line-through;
+    color: gray;
+}
+
+form {
+    display: inline-block;
+} 
+
+.add_task {
+    padding-left: 40px;
+}
+
+#list1_div, #list2_div{
+ background-color: beige;
+ min-height: 300px;
+ min-width: 300px;
+ border-radius: 15px;
+ margin-bottom: 40px;
+ box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+ 
+}
+
+#list2_div{
+ background-color: beige;
+ min-height: 300px;
+ min-width: 300px;
+ border-radius: 10px;
+ box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+#list1_div, #list2_div{
+ background-color: beige;
+ min-height: 300px;
+ min-width: 300px;
+ border-radius: 10px;
+ box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+#list1, #list2 {
+    display:flex;
+    flex-direction: column-reverse;
+} 
+
+.hide{
+    display: none;
+}
+
+footer{
+    text-align: center;
+}
