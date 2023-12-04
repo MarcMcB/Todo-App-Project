@@ -1,0 +1,64 @@
+<%- include("Partials/header.ejs") %>
+
+    
+<div id="todaysDate"><%=today%></div>
+<div id="nav_container">
+    
+    <nav id="navbar">
+        
+        <ul>
+            <li id="my_todos"><a href="#list2_div">MY TODOS</a></li>
+            <li id="work_todos"><a href="#list1_div">WORK TODOS</a></li>
+        </ul>
+    </nav>
+</div>
+  
+<div class="lists">
+        <div id="list1_div">
+            <h2>WORK TASKS</h2>
+            <form action="/work" method="POST" class="add_task">
+                <input type="text" id="new_work_task" name="new_work_task" placeholder="ADD TASK">
+                <input type="submit" value="ADD">
+            </form>
+            <ul id="list1">
+                    <%Work_List.forEach((task) => {%>
+                        <div class="tasks">
+                            <form method="post" action="/work/done/<%= task.isDone  %>/<%= task.id  %>">
+                               <button name="done_btn" class="done_btn <%= task.isDone ? 'hide' : ''  %>" type="submit">DONE?</button>
+                            </form>
+                            <form method="post" action="/work/delete/<%= task.id  %>">
+                                <button id="<%= task.id  %>" class="del_btn <%= task.isDone ? '' : 'hide'  %>" type="submit">DELETE</button>
+                            </form>
+                            <li class=" items <%= task.isDone ? 'task_done' : '' %>">▪️  <%=task.task%></li>
+                        </div>
+                    <% }) %>
+            </ul>
+        </div>
+
+        <div id="list2_div">
+            <h2>MY TASKS</h2>
+            <form action="/my" method="POST" class="add_task">
+                <input type="text" name="new_my_task" placeholder="ADD TASK">
+                <input type="submit" value="ADD">
+            </form>
+            <ul id="list2">
+                    <%My_List.forEach((task) => {%>
+                            <div class="tasks">
+                                
+                                <form method="post" action="/my/done/<%= task.id  %>">
+                                    <button name="done_btn" class="done_btn <%= task.isDone ? 'hide' : ''  %>" type="submit">DONE?</button>
+                                </form>
+                                <form method="post" action="/my/delete/<%= task.id %>">
+                                    <button id="<%= task.id %>" type="submit" class="del_btn <%= task.isDone ? '' : 'hide'  %>" >DELETE</button>
+                                </form>
+                                <li  class=" items <%= task.isDone ? 'task_done' : '' %>">▪️<%=task.task%> 
+                            </div>
+
+                        </li>
+                    <% }) %>
+            </ul>
+        </div>
+</div>
+<script src="app.js"></script>
+</body>
+<%- include("Partials/footer.ejs") %> 
